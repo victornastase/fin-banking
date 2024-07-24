@@ -12,20 +12,16 @@
 	<artifactId>fin-banking</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>fin-banking</name>
-	<description>Learning project with Spring Boot</description>
-	<url/>
-	<licenses>
-		<license/>
-	</licenses>
+	<description>Learning project @Spring Boot</description>
 	<developers>
-		<developer />
+		<developer>
+			<name>Nastase Victor</name>
+			<email>victor.gabriel.nastase@gmail.com</email>
+			<roles>
+				<role>Java Developer</role>
+			</roles>
+		</developer>
 	</developers>
-	<scm>
-		<connection/>
-		<developerConnection/>
-		<tag/>
-		<url/>
-	</scm>
 	<properties>
 		<java.version>22</java.version>
 	</properties>
@@ -41,6 +37,11 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-docker-compose</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mapstruct</groupId>
+			<artifactId>mapstruct</artifactId>
+			<version>1.5.5.Final</version>
 		</dependency>
 
 		<dependency>
@@ -63,16 +64,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-testcontainers</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.testcontainers</groupId>
-			<artifactId>junit-jupiter</artifactId>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
