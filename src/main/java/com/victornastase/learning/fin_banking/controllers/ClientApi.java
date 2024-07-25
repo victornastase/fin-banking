@@ -26,9 +26,9 @@ public class ClientApi {
         return clientService.getClients();
     }
 
-//    @GetMapping("client/{email}")
-//    public Client getClient(@PathVariable String email) {
-//        log.info("Getting client by email. Email: {}", email);
-//        return clientsRepository.findByEmail(email);
-//    }
+    @GetMapping("client/{email}")
+    public ClientDTO getClient(@PathVariable String email) {
+        log.info("Getting client by email. Email: {}", email);
+        return clientService.getClient(email);
+    }
 }

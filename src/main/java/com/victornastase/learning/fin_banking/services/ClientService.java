@@ -1,5 +1,6 @@
 package com.victornastase.learning.fin_banking.services;
 
+import com.victornastase.learning.fin_banking.entities.Client;
 import com.victornastase.learning.fin_banking.entities.Loan;
 import com.victornastase.learning.fin_banking.models.ClientDTO;
 import com.victornastase.learning.fin_banking.models.LoanDTO;
@@ -25,11 +26,18 @@ public class ClientService {
                 .toList();
     }
 
+    public ClientDTO getClient(String email) {
+        log.info("Getting client with email {}", email);
+        Client client = clientsRepository.findByEmail(email);
+        return new ClientDTO(client.getId(), client.getFirstName(),
+                client.getLastName(), client.getEmail(),
+                createLoanDTOs(client.getLoans()));
+    }
+
     private List<LoanDTO> createLoanDTOs(List<Loan> loans) {
         return loans.stream()
                 .map(loan -> new LoanDTO(loan.getId(), loan.getTerm(),
                     loan.getAmount(), loan.getInterestRate()))
                 .toList();
     }
-
 }

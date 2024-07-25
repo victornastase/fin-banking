@@ -7,7 +7,10 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "loans")
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Loan {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
